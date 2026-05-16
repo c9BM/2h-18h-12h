@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin đơn hàng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .status-bar {
+            height: 44px;
+        }
+        .product-img {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 max-w-[430px] mx-auto min-h-screen overflow-hidden">
+
+    <!-- Status Bar -->
+    <div class="bg-white px-4 py-1 flex items-center justify-between text-sm border-b">
+        <div class="font-medium">01:13</div>
+        <div class="flex items-center gap-1">
+            <span class="font-medium">5G</span>
+            <i class="fas fa-signal"></i>
+            <div class="bg-black text-white text-[10px] px-1.5 rounded">54</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="bg-white px-4 py-3 flex items-center border-b">
+        <button onclick="window.history.back()" class="text-2xl text-gray-700 mr-3">
+            ←
+        </button>
+        <h1 class="text-lg font-semibold">Thông tin đơn hàng</h1>
+    </div>
+
+    <!-- Order Status -->
+    <div class="bg-emerald-600 text-white px-4 py-4">
+        <div class="flex items-center gap-2 font-semibold text-lg">
+            <i class="fas fa-check-circle"></i>
+            <span>Đơn hàng đã hoàn thành</span>
+        </div>
+    </div>
+
+    <!-- Fast Delivery -->
+    <div class="bg-white mx-3 mt-3 rounded-xl shadow-sm p-4 text-sm">
+        <div class="flex items-start gap-3">
+            <div class="text-emerald-500 text-xl mt-0.5">🕒</div>
+            <div>
+                <p class="text-emerald-600 font-medium">Giao nhanh đúng hẹn: nhận Voucher 15.000đ nếu đơn hàng được giao đến bạn sau ngày 18-05-2026.</p>
+                <a href="#" class="text-emerald-600 text-sm font-medium mt-1 inline-flex items-center gap-1">
+                    Xem thêm <span class="text-base">›</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shipping Info -->
+    <div class="bg-white mx-3 mt-3 rounded-xl shadow-sm overflow-hidden">
+        <div class="px-4 py-3 border-b flex justify-between items-center">
+            <div>
+                <div class="text-sm text-gray-500">Thông tin vận chuyển</div>
+                <div class="font-medium">Giao Hàng Nhanh: GYT GKGQX</div>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </div>
+        
+        <div class="px-4 py-4 flex items-center gap-3">
+            <div class="text-2xl">🚚</div>
+            <div>
+                <div class="text-emerald-600 font-semibold">Giao hàng thành công</div>
+                <div class="text-xs text-gray-500">15-05-2026 20:18</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipient -->
+    <div class="bg-white mx-3 mt-3 rounded-xl shadow-sm p-4">
+        <div class="flex items-start gap-3">
+            <div class="text-xl mt-1">📍</div>
+            <div class="flex-1">
+                <div class="font-semibold">nguyen giang (+84) 961 236 308</div>
+                <div class="text-sm text-gray-600 mt-1">
+                    Nhà Văn Hoá Ninh Khánh, Phường Nếnh, Tỉnh Bắc Ninh
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product -->
+    <div class="bg-white mx-3 mt-3 rounded-xl shadow-sm p-4">
+        <div class="flex items-center gap-3 text-sm font-medium text-gray-600 mb-3">
+            <i class="fas fa-store"></i>
+            <span>Xưởng Chăn Ga Dacosa</span>
+            <i class="fas fa-chevron-right ml-auto"></i>
+        </div>
+        
+        <div class="flex gap-4">
+            <!-- Product Image -->
+            <div class="w-24 h-24 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden product-img">
+                <img src="https://i.imgur.com/5v5v5v5.jpg" 
+                     alt="Nệm Topper" 
+                     class="w-full h-full object-cover"
+                     onerror="this.src='https://via.placeholder.com/150x150/4ade80/ffffff?text=Topper'">
+            </div>
+            
+            <!-- Product Info -->
+            <div class="flex-1">
+                <div class="text-sm leading-tight line-clamp-2">
+                    Nệm Topper dày 8cm tấm topper tiện nghi cao cấp<br>
+                    Topper_Khủng Long Bò,90x2m(190)
+                </div>
+                <div class="text-xs text-gray-500 mt-2">x1</div>
+                
+                <div class="flex items-center gap-2 mt-4">
+                    <span class="line-through text-gray-400 text-sm">300.000đ</span>
+                    <span class="text-red-500 font-semibold">198.000đ</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total -->
+        <div class="mt-6 pt-4 border-t flex justify-between items-center">
+            <span class="text-gray-600">Thành tiền:</span>
+            <span class="font-semibold text-lg">168.000đ</span>
+        </div>
+    </div>
+
+    <!-- Support -->
+    <div class="bg-white mx-3 mt-3 rounded-xl shadow-sm overflow-hidden">
+        <div class="px-4 py-4 border-b flex items-center gap-3">
+            <div class="text-xl">🔄</div>
+            <div class="flex-1">
+                <div class="font-medium">Gửi yêu cầu Trả hàng/Hoàn tiền</div>
+                <div class="text-xs text-gray-500">Gửi yêu cầu trễ nhất vào 30 Th05</div>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </div>
+        
+        <div class="px-4 py-4 border-b flex items-center gap-3">
+            <div class="text-xl">💬</div>
+            <div class="flex-1 font-medium">Liên hệ Shop</div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </div>
+        
+        <div class="px-4 py-4 flex items-center gap-3">
+            <div class="text-xl">❓</div>
+            <div class="flex-1 font-medium">Trung tâm Hỗ trợ</div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </div>
+    </div>
+
+    <!-- Bottom Buttons -->
+    <div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-white border-t p-4 flex gap-3">
+        <button onclick="alert('Đang xem đánh giá...')" 
+                class="flex-1 py-3 border border-gray-300 rounded-xl font-medium">
+            Xem Đánh giá
+        </button>
+        <button onclick="alert('Đã gửi yêu cầu hoàn tiền!')" 
+                class="flex-1 py-3 bg-red-500 text-white rounded-xl font-medium">
+            Yêu cầu Trả hàng/Hoàn tiền
+        </button>
+    </div>
+
+    <div class="h-20"></div>
+
+    <script>
+        // Tailwind script already loaded via CDN
+        console.log("%c✅ Trang HTML mô phỏng đơn hàng đã được tạo!", "color: #10b981; font-size: 16px; font-weight: bold");
+    </script>
+</body>
+</html>
