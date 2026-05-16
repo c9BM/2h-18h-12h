@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DACOSA - Chăn Ga Gối Đệm Cao Cấp | Giao Hàng Toàn Quốc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', system-ui, sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://i.imgur.com/8vN5vN5.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card {
+            transition: all 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .tail-text { font-family: 'Roboto', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Top bar -->
+            <div class="bg-emerald-700 text-white text-sm py-2">
+                <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-truck"></i> 
+                            <span>Giao hàng toàn quốc • Miễn phí ship từ 500k</span>
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-6 text-sm">
+                        <a href="#" class="hover:underline">Kiểm tra đơn hàng</a>
+                        <a href="#" class="hover:underline">Liên hệ: 0961.236.308</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main header -->
+            <div class="px-4 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-2xl">D</div>
+                    <div>
+                        <span class="font-bold text-2xl tracking-tight text-emerald-700">DACOSA</span>
+                        <p class="text-xs text-gray-500 -mt-1">Chăn Ga Gối Đệm</p>
+                    </div>
+                </div>
+
+                <div class="flex-1 max-w-xl mx-6">
+                    <div class="relative">
+                        <input type="text" id="search" 
+                               class="w-full border border-gray-300 rounded-full py-3 px-5 pl-12 focus:outline-none focus:border-emerald-500"
+                               placeholder="Tìm nệm topper, chăn ga, gối...">
+                        <i class="fas fa-search absolute left-5 top-3.5 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <button onclick="toggleCart()" class="relative">
+                        <i class="fas fa-shopping-cart text-2xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </button>
+                    <button class="flex items-center gap-2">
+                        <i class="fas fa-user text-2xl"></i>
+                        <span class="hidden md:block text-sm font-medium">Nguyễn Giang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="border-t bg-white">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center gap-8 py-3 text-sm font-medium overflow-x-auto">
+                        <a href="#" class="text-emerald-600 hover:text-emerald-700">TRANG CHỦ</a>
+                        <a href="#" class="hover:text-emerald-600">NỆM TOPPER</a>
+                        <a href="#" class="hover:text-emerald-600">CHĂN GA GỐI</a>
+                        <a href="#" class="hover:text-emerald-600">ĐỆM CAO CẤP</a>
+                        <a href="#" class="hover:text-emerald-600">KHUYẾN MÃI</a>
+                        <a href="#" class="hover:text-emerald-600">VỀ DACOSA</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero-bg h-[500px] flex items-center text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-lg">
+                <h1 class="text-5xl font-bold leading-tight mb-4">
+                    NGỦ NGON - SỐNG KHỎE<br>
+                    <span class="text-emerald-300">Với Dacosa</span>
+                </h1>
+                <p class="text-xl mb-8">Chăn ga gối đệm cao cấp • Giá xưởng • Giao hàng nhanh toàn quốc</p>
+                <div class="flex gap-4">
+                    <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" 
+                            class="bg-white text-emerald-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-emerald-100">
+                        Mua Ngay
+                    </button>
+                    <button class="border-2 border-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-white/10">
+                        Xem Bộ Sưu Tập
+                    </button>
+                </div>
+                <div class="mt-8 flex items-center gap-8 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check"></i>
+                        <span>Bảo hành 5 năm</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check"></i>
+                        <span>Đổi trả 30 ngày</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check"></i>
+                        <span>COD Toàn Quốc</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="bg-white py-4 border-b">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-3 md:grid-cols-5 gap-6 text-center text-sm">
+            <div class="flex items-center justify-center gap-3">
+                <i class="fas fa-truck text-2xl text-emerald-600"></i>
+                <div><strong>Giao hàng 2-4 ngày</strong><br><span class="text-xs text-gray-500">Toàn 63 tỉnh</span></div>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+                <i class="fas fa-shield-alt text-2xl text-emerald-600"></i>
+                <div><strong>Bảo hành chính hãng</strong><br><span class="text-xs text-gray-500">5 năm</span></div>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+                <i class="fas fa-sync-alt text-2xl text-emerald-600"></i>
+                <div><strong>Đổi trả miễn phí</strong><br><span class="text-xs text-gray-500">30 ngày</span></div>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+                <i class="fas fa-credit-card text-2xl text-emerald-600"></i>
+                <div><strong>Thanh toán linh hoạt</strong><br><span class="text-xs text-gray-500">COD, chuyển khoản</span></div>
+            </div>
+            <div class="flex items-center justify-center gap-3">
+                <i class="fas fa-medal text-2xl text-emerald-600"></i>
+                <div><strong>Chất lượng xưởng</strong><br><span class="text-xs text-gray-500">Bắc Ninh</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-3xl font-bold">Sản phẩm nổi bật</h2>
+            <a href="#" class="text-emerald-600 font-medium flex items-center gap-1">
+                Xem tất cả <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product 1 -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <div class="relative">
+                    <img src="https://i.imgur.com/5v5v5v5.jpg" class="w-full h-64 object-cover" alt="Nệm Topper">
+                    <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">-34%</span>
+                </div>
+                <div class="p-4">
+                    <div class="text-sm text-gray-500">Xưởng Chăn Ga Dacosa</div>
+                    <h3 class="font-semibold leading-tight mt-1 line-clamp-2">Nệm Topper Dày 8cm Khủng Long Bò Cao Cấp</h3>
+                    <div class="flex items-center gap-2 mt-3">
+                        <span class="text-2xl font-bold text-red-500">198.000đ</span>
+                        <span class="line-through text-gray-400">300.000đ</span>
+                    </div>
+                    <button onclick="addToCart(this)" 
+                            class="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-2xl font-medium">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <div class="relative">
+                    <img src="https://i.imgur.com/abc123.jpg" class="w-full h-64 object-cover" alt="Ga giường">
+                    <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs px-3 py-1 rounded-full">Hot</span>
+                </div>
+                <div class="p-4">
+                    <div class="text-sm text-gray-500">Dacosa Premium</div>
+                    <h3 class="font-semibold leading-tight mt-1 line-clamp-2">Bộ Ga Giường Cotton Tici Cao Cấp 4 Món</h3>
+                    <div class="flex items-center gap-2 mt-3">
+                        <span class="text-2xl font-bold">450.000đ</span>
+                    </div>
+                    <button onclick="addToCart(this)" 
+                            class="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-2xl font-medium">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+            <!-- More products can be added similarly -->
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <img src="https://i.imgur.com/def456.jpg" class="w-full h-64 object-cover" alt="Gối">
+                <div class="p-4">
+                    <div class="text-sm text-gray-500">Dacosa</div>
+                    <h3 class="font-semibold leading-tight mt-1">Gối Cao Su Non Memory Foam</h3>
+                    <div class="flex items-center gap-2 mt-3">
+                        <span class="text-2xl font-bold">320.000đ</span>
+                    </div>
+                    <button onclick="addToCart(this)" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-2xl font-medium">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-sm">
+                <img src="https://i.imgur.com/ghi789.jpg" class="w-full h-64 object-cover" alt="Chăn">
+                <div class="p-4">
+                    <div class="text-sm text-gray-500">Dacosa Winter</div>
+                    <h3 class="font-semibold leading-tight mt-1">Chăn Lông Cừu Cao Cấp Giữ Nhiệt</h3>
+                    <div class="flex items-center gap-2 mt-3">
+                        <span class="text-2xl font-bold">680.000đ</span>
+                    </div>
+                    <button onclick="addToCart(this)" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-2xl font-medium">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="bg-emerald-50 py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-center text-3xl font-bold mb-12">Tại sao khách hàng chọn DACOSA?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🏭</div>
+                    <h3 class="font-semibold text-xl">Sản xuất trực tiếp</h3>
+                    <p class="text-gray-600 mt-2">Xưởng tại Bắc Ninh - Không qua trung gian</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">🚚</div>
+                    <h3 class="font-semibold text-xl">Giao hàng nhanh</h3>
+                    <p class="text-gray-600 mt-2">Toàn quốc trong 2-5 ngày, COD dễ dàng</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl mb-4">⭐</div>
+                    <h3 class="font-semibold text-xl">Chất lượng cao cấp</h3>
+                    <p class="text-gray-600 mt-2">Vải cotton Hàn Quốc, lõi cao su non thiên nhiên</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 text-white mb-4">
+                        <div class="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-2xl font-bold">D</div>
+                        <span class="font-bold text-2xl">DACOSA</span>
+                    </div>
+                    <p class="text-sm">Xưởng sản xuất chăn ga gối đệm cao cấp tại Bắc Ninh. Cam kết chất lượng và giá tốt nhất thị trường.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Hỗ trợ khách hàng</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="hover:text-white">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="#" class="hover:text-white">Kiểm tra bảo hành</a></li>
+                        <li><a href="#" class="hover:text-white">Liên hệ: 0961 236 308</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Về chúng tôi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Giới thiệu DACOSA</a></li>
+                        <li><a href="#" class="hover:text-white">Tin tức &amp; Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Kết nối với chúng tôi</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <i class="fab fa-facebook hover:text-white cursor-pointer"></i>
+                        <i class="fab fa-zalo hover:text-white cursor-pointer"></i>
+                        <i class="fab fa-tiktok hover:text-white cursor-pointer"></i>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-sm">Thanh toán an toàn</p>
+                        <div class="flex gap-4 mt-2 text-3xl">
+                            <span>💳</span>
+                            <span>🏧</span>
+                            <span>📱</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 py-6 text-center text-xs">
+            © 2026 DACOSA. All rights reserved. Giao hàng toàn lãnh thổ Việt Nam
+        </div>
+    </footer>
+
+    <!-- CART MODAL -->
+    <div id="cart-modal" class="hidden fixed inset-0 bg-black/70 flex items-end md:items-center justify-center z-50">
+        <div class="bg-white w-full md:w-[420px] max-h-[90vh] overflow-auto rounded-t-3xl md:rounded-3xl">
+            <div class="p-6 border-b flex justify-between items-center sticky top-0 bg-white">
+                <h3 class="font-bold text-xl">Giỏ hàng</h3>
+                <button onclick="toggleCart()" class="text-3xl leading-none">×</button>
+            </div>
+            <div id="cart-items" class="p-6 space-y-6">
+                <!-- JS will add items here -->
+            </div>
+            <div class="p-6 border-t bg-gray-50">
+                <div class="flex justify-between text-lg">
+                    <span>Tổng tiền:</span>
+                    <span id="cart-total" class="font-bold">0đ</span>
+                </div>
+                <button onclick="checkout()" 
+                        class="mt-6 w-full bg-emerald-600 text-white py-4 rounded-2xl font-semibold text-lg">
+                    Đặt hàng ngay
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function addToCart(btn) {
+            const product = btn.parentElement.parentElement;
+            const name = product.querySelector('h3').textContent;
+            const priceText = product.querySelector('.text-2xl').textContent;
+            const price = parseInt(priceText.replace(/[^0-9]/g, ''));
+
+            cart.push({ name, price, qty: 1 });
+            updateCart();
+            
+            btn.textContent = '✓ Đã thêm';
+            setTimeout(() => btn.textContent = 'Thêm vào giỏ', 1500);
+        }
+
+        function updateCart() {
+            document.getElementById('cart-count').textContent = cart.length;
+            
+            const container = document.getElementById('cart-items');
+            container.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price * item.qty;
+                container.innerHTML += `
+                    <div class="flex gap-4">
+                        <div class="flex-1">
+                            <p class="font-medium">${item.name}</p>
+                            <p class="text-emerald-600">${item.price.toLocaleString('vi-VN')}đ</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 text-xl">×</button>
+                    </div>
+                `;
+            });
+
+            document.getElementById('cart-total').textContent = total.toLocaleString('vi-VN') + 'đ';
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-modal').classList.toggle('hidden');
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+            alert('🎉 Cảm ơn bạn đã đặt hàng! Chúng tôi sẽ liên hệ xác nhận trong vài phút.');
+            cart = [];
+            updateCart();
+            toggleCart();
+        }
+
+        // Search demo
+        document.getElementById('search').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                alert('Đang tìm: ' + this.value + '\n\nKết quả sẽ được hiển thị trong phiên bản đầy đủ.');
+            }
+        });
+
+        // Tailwind script ready
+        console.log('%c✅ Website DACOSA - Buôn bán toàn quốc đã sẵn sàng!', 'color: #10b981; font-size: 18px; font-weight: bold');
+    </script>
+</body>
+</html>
